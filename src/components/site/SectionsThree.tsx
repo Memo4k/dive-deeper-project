@@ -165,14 +165,6 @@ const PROJECT_CARDS = [
   },
 ];
 
-const STATS = [
-  { label: "Statistic 01", hint: "Add your measured value" },
-  { label: "Statistic 02", hint: "Add your measured value" },
-  { label: "Statistic 03", hint: "Add your measured value" },
-];
-
-const TEAM = ["Team member 01", "Team member 02", "Team member 03", "Team member 04"];
-
 export function ProjectSection() {
   return (
     <Section id="project" className="bg-abyss">
@@ -180,40 +172,12 @@ export function ProjectSection() {
 
       <div className="mt-14 grid gap-5 sm:grid-cols-2">
         {PROJECT_CARDS.map((c, i) => (
-          <Reveal key={c.t} delay={i * 90} className="glass-panel p-8">
+          <Reveal key={c.t} delay={i * 90} className="glass-panel flex h-full flex-col p-8">
             <h3 className="font-display text-sm tracking-[0.2em] text-cyan">{c.t}</h3>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
           </Reveal>
         ))}
       </div>
-
-      <Reveal delay={120} className="mt-16">
-        <h3 className="label-mono">Project statistics</h3>
-        <div className="mt-6 grid gap-5 sm:grid-cols-3">
-          {STATS.map((s) => (
-            <div key={s.label} className="border border-dashed border-cyan/25 p-7 text-center">
-              <p className="font-display text-3xl font-semibold text-offwhite/25">—</p>
-              <p className="mt-3 font-display text-xs tracking-[0.2em] text-offwhite/80 uppercase">
-                {s.label}
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">{s.hint}</p>
-            </div>
-          ))}
-        </div>
-      </Reveal>
-
-      <Reveal delay={160} className="mt-14">
-        <h3 className="label-mono">Our team</h3>
-        <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {TEAM.map((m) => (
-            <li key={m} className="border border-cyan/15 bg-mid/25 p-6 text-center">
-              <div className="mx-auto size-14 rounded-full border border-cyan/25 bg-deep" aria-hidden />
-              <p className="mt-4 font-display text-xs tracking-[0.16em] text-offwhite">{m}</p>
-              <p className="mt-1 text-xs text-muted-foreground">Role to be added</p>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
     </Section>
   );
 }
