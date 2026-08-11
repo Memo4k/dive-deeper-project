@@ -2,6 +2,7 @@ import { ClipboardList, GraduationCap, ShieldCheck, Radio } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal, Section, SectionHeading, Bubbles } from "./Atoms";
 import { BookingDialog } from "./BookingDialog";
+import { PurchaseDialog } from "./PurchaseDialog";
 import deviceImage from "@/assets/device.jpg";
 
 const SESSIONS = [
@@ -92,14 +93,15 @@ export function DeviceShowcase() {
             ))}
           </div>
           <Reveal delay={220} className="mt-8">
-            <BookingDialog>
-              <Button variant="depth" size="xl">
-                Request Device Information
+            <PurchaseDialog>
+              <Button variant="dive" size="xl">
+                Buy the Device
               </Button>
-            </BookingDialog>
+            </PurchaseDialog>
             <p className="mt-4 text-xs text-muted-foreground">
-              Informational request only — nothing is sold and no payment is taken.
+              Student Project Prototype — No real payment is processed.
             </p>
+
           </Reveal>
         </div>
       </div>
