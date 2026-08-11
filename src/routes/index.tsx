@@ -1,24 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { WhyRebreather, DiveJourney, HowItWorks } from "@/components/site/SectionsOne";
+import { MeetTheSystem, ThreeLenses } from "@/components/site/SectionsTwo";
+import {
+  Training,
+  DeviceShowcase,
+  NoTechnology,
+  ProjectSection,
+  FinalCall,
+  SiteFooter,
+} from "@/components/site/SectionsThree";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "SCUBA DIVER REBREATHER — Go Beyond the Surface";
+const description =
+  "An immersive student innovation project exploring closed-circuit rebreather diving through web development, embedded systems and no-technology preparation.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-abyss">
+      <Nav />
+      <main>
+        <Hero />
+        <WhyRebreather />
+        <DiveJourney />
+        <HowItWorks />
+        <MeetTheSystem />
+        <ThreeLenses />
+        <Training />
+        <DeviceShowcase />
+        <NoTechnology />
+        <ProjectSection />
+        <FinalCall />
+      </main>
+      <SiteFooter />
     </div>
   );
 }
