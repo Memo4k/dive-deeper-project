@@ -130,6 +130,29 @@ export function HowItWorks() {
       <Bubbles count={8} />
       <SectionHeading index="Section 03" title="HOW IT WORKS" subtitle="A closed loop, conceptually" align="center" />
 
+      <Reveal delay={80} className="glass-panel mx-auto mt-12 max-w-3xl p-8">
+        <p className="label-mono">Introduction</p>
+        <h3 className="mt-4 font-display text-xl tracking-[0.16em] text-offwhite">
+          UNDERSTANDING THE REBREATHER
+        </h3>
+        <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
+          <p>
+            A rebreather is a breathing system that keeps the diver's gas inside a sealed loop
+            instead of releasing every breath into the water.
+          </p>
+          <p>
+            It works on a closed-loop concept: the gas the diver exhales is processed rather than
+            simply vented away. Carbon dioxide is removed, the oxygen the body used is replaced, and
+            the conditioned gas travels back to the diver.
+          </p>
+          <p>
+            This introduction is educational and high level — it explains the idea behind the
+            system, not how to operate one.
+          </p>
+        </div>
+      </Reveal>
+
+
       <div className="relative mt-16 grid gap-4 md:grid-cols-5">
         <svg
           aria-hidden
