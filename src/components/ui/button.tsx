@@ -16,13 +16,20 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        dive: "rounded-none bg-cyan font-display tracking-[0.18em] uppercase text-primary-foreground shadow-[var(--shadow-glow)] transition-all hover:brightness-110 hover:tracking-[0.22em]",
+        depth:
+          "rounded-none border border-cyan/40 bg-transparent font-display tracking-[0.18em] uppercase text-cyan transition-all hover:border-cyan hover:bg-cyan/10 hover:tracking-[0.22em]",
+        coral:
+          "rounded-none bg-coral font-display tracking-[0.18em] uppercase text-primary-foreground transition-all hover:brightness-110",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
+        xl: "h-13 px-9 text-sm",
         icon: "h-9 w-9",
       },
+
     },
     defaultVariants: {
       variant: "default",

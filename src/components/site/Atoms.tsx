@@ -20,8 +20,8 @@ export function Reveal({
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
           setShown(true);
           io.disconnect();
         }
@@ -32,17 +32,19 @@ export function Reveal({
     return () => io.disconnect();
   }, []);
 
+  const Component = Tag as React.ElementType;
+
   return (
-    // @ts-expect-error dynamic tag
-    <Tag
-      ref={ref}
+    <Component
+      ref={ref as never}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn("reveal", shown && "reveal-in", className)}
     >
       {children}
-    </Tag>
+    </Component>
   );
 }
+
 
 /** Slow rising bubbles / suspended particles. */
 export function Bubbles({ count = 18, className }: { count?: number; className?: string }) {
