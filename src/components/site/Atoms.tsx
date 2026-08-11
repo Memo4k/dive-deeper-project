@@ -32,7 +32,7 @@ export function Reveal({
     return () => io.disconnect();
   }, []);
 
-  const Component = Tag as React.ElementType;
+  const Component = Tag as ElementType;
 
   return (
     <Component
